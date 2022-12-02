@@ -3,7 +3,7 @@ on:
   push:
 jobs:
   build:
-    runs-on: ubuntu-20.04
+    runs-on: latest
     strategy:
       matrix:
         node-version: [15]
@@ -19,8 +19,5 @@ jobs:
         cache: 'pnpm'
     - name: Install dependencies
       run: pnpm install
-    - name: Build project
-      run: pnpm build
     - name: Run tests
       run: pnpm test
-      
